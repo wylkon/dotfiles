@@ -47,9 +47,7 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 #### shell environment
 
 - `.aliases`
-- `.bash_profile`
-- `.bash_prompt`
-- `.bashrc`
+- `.zshrc`
 - `.exports`
 - `.functions`
 - `.extra` - not included, explained above
