@@ -9,7 +9,7 @@ fi
 
 DOMAIN=$1
 COMMON_NAME=${2:-*.$1}
-SUBJECT="/C=BR/ST=SP/L=Sao Paulo/O=gilbarbara/CN=$DOMAIN/emailAddress=gilbarbara@gmail.com"
+SUBJECT="/C=BR/ST=SP/L=Sao Paulo/O=wylkon/CN=$DOMAIN/emailAddress=wylkon@wylkon.com.br"
 NUM_OF_DAYS=999
 EXT="authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE

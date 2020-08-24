@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-dotfiles=(.ackrc .aliases .bash_colors .bash_completion .bash_profile .bash_prompt .bashrc .config .editorconfig .exports .functions .gitattributes .gitconfig .gitignore .inputrc .npmrc .osx .vim .vimrc)
+dotfiles=(.ackrc .aliases .bash_colors .bash_completion .bash_profile .bash_prompt .bashrc .config .editorconfig .exports .functions .gitattributes .gitconfig .gitignore .npmrc .osx .vim .vimrc)
 
 # Install dotfiles
 run_dotfiles() {
 	for i in "${dotfiles[@]}"; do
-		if [[ "$i" == ".gitconfig" && -f ~/.gitconfig && "$USER" != "gilbarbara" ]]; then
+		if [[ "$i" == ".gitconfig" && -f ~/.gitconfig && "$USER" != "wylkon" ]]; then
 			e_warning ".gitconfig already exists, do it manually"
-		elif [[ "$i" == ".npmrc" && -f ~/.npmrc && "$USER" != "gilbarbara" ]]; then
+		elif [[ "$i" == ".npmrc" && -f ~/.npmrc && "$USER" != "wylkon" ]]; then
 			e_warning ".npmrc already exists, do it manually"
 		else
 			rm -rf ~/"$i"
@@ -15,5 +15,5 @@ run_dotfiles() {
 		fi
 	done
 
-	source ~/.bash_profile
+	source ~/.zshrc
 }

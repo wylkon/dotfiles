@@ -18,7 +18,7 @@ Options:
     ruby			Install gems
     tools			Install bash tools
 
-Documentation can be found at https://github.com/gilbarbara/dotfiles
+Documentation can be found at https://github.com/wylkon/dotfiles
 
 EOT
 }

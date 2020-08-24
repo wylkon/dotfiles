@@ -17,12 +17,6 @@ run_brew() {
 	brew install findutils
 	brew install ngrep
 
-	# Install Bash 4
-	brew install bash
-
-	# Completions
-	brew install bash-completion2 brew-cask-completion docker-completion gem-completion launchctl-completion wpcli-completion yarn-completion
-
 	# Install more recent versions of some OS X tools
 	brew install vim
 	brew install grep
@@ -40,11 +34,11 @@ run_brew() {
 	brew install python
 
 	# Ruby
-	brew install ruby
+	brew install rbenv ruby-build
 
 	# Node
 	brew install node
-	brew install nvm
+	brew install n
 
 	# Git and tools
 	brew install git git-extras git-lfs github/gh/gh hub tig
@@ -65,7 +59,6 @@ run_brew() {
 	brew install lame
 	brew install rename
 	brew install speedtest-cli
-	brew install thefuck
 	brew install watchman
 	brew install wget
 	brew install wp-cli

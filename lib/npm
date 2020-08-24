@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 npm_packages=(
-	@babel/core
 	@babel/cli
+	@babel/core
 	@babel/node
 	@babel/preset-env
 	@babel/preset-react
@@ -23,7 +23,6 @@ npm_packages=(
 	iectrl
 	jscodeshift
 	nodemon
-	now
 	npm-check-updates
 	npm-consider
 	ntl
@@ -40,6 +39,7 @@ npm_packages=(
 	svgo
 	tldr
 	ts-node
+	vercel
 	webpack-bundle-analyzer
 	yarn
 )

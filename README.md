@@ -1,4 +1,6 @@
-# Gil's dotfiles & setup
+# Wylkon's dotfiles & setup
+
+[Fork from @gilbarbara](https://github.com/gilbarbara/dotfiles/). Pls, take a look, it is amazing.
 
 [Mathias's readme](https://github.com/mathiasbynens/dotfiles/) is awesome. go read it.
 
@@ -34,40 +36,43 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 
 ## Overview of dotfiles
 
-####  Automatic config
-* `.vimrc`, `.vim` - vim config, obv.
-* `.ackrc`
-* `.editorconfig`
-* `.jshintrc`
-* `.jscsrc`
+#### Automatic config
+
+- `.vimrc`, `.vim` - vim config, obv.
+- `.ackrc`
+- `.editorconfig`
+- `.jshintrc`
+- `.jscsrc`
 
 #### shell environment
-* `.aliases`
-* `.bash_profile`
-* `.bash_prompt`
-* `.bashrc`
-* `.exports`
-* `.functions`
-* `.extra` - not included, explained above
+
+- `.aliases`
+- `.bash_profile`
+- `.bash_prompt`
+- `.bashrc`
+- `.exports`
+- `.functions`
+- `.extra` - not included, explained above
 
 #### manual run
-* `setup.sh` - apps I need
-* `.osx` - run on a fresh osx machine
+
+- `setup.sh` - apps I need
+- `.osx` - run on a fresh osx machine
 
 #### git
-* `.gitattributes`
-* `.gitconfig`
-* `.gitignore`
 
-* `.inputrc` - config for bash readline
+- `.gitattributes`
+- `.gitconfig`
+- `.gitignore`
 
 ## Installation
 
 ```bash
-git clone https://github.com/gilbarbara/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup.sh
+git clone https://github.com/wylkon/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup.sh
 ```
 
 Also you can install the modules individually
+
 ```bash
 ./setup.sh module_name
 ```
@@ -84,7 +89,7 @@ Set your pinentry program by adding it to `~/.gnupg/gpg-agent.conf`
 pinentry-program $(brew --prefix)/bin/pinentry-mac
 ```
 
-## Changing ulimit on Mac OS X 10.12 and up 
+## Changing ulimit on Mac OS X 10.12 and up
 
 ```bash
 sudo /usr/libexec/PlistBuddy /Library/LaunchAgents/com.launchd.maxfiles.plist \
@@ -107,4 +112,3 @@ sudo /usr/libexec/PlistBuddy /Library/LaunchAgents/com.launchd.maxproc.plist \
 -c "add ProgramArguments: string unlimited" \
 -c "add RunAtLoad bool true"
 ```
-
