@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 run_binaries() {
 	e_process "Copying binaries"

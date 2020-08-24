@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-libs=(apps binaries brew dotfiles fonts npm quicklook rubygems tools)
+libs=(apps binaries brew dotfiles fonts npm rubygems tools)
 
 # Help text
 source ./lib/help
@@ -67,7 +67,7 @@ run_brew
 # /_/ |_|\__,_/_.___/\__, /
 #                   /____/
 
-e_process "Installing Gems"
+e_process "Installing Rbenv and Gems"
 run_rubygems
 
 #     _   ______  __  ___
@@ -99,24 +99,6 @@ fi
 
 e_success "All packages have been installed"
 
-#     ____             __
-#    / __ )____ ______/ /_
-#   / __  / __ `/ ___/ __ \
-#  / /_/ / /_/ (__  ) / / /
-# /_____/\__,_/____/_/ /_/
-#
-
-if [ -f /usr/local/bin/bash ]; then
-    if grep -Fxq "/usr/local/bin/bash" /etc/shells; then
-        echo ""
-    else
-        sudo sh lib/bash
-    fi
-
-    if [[ $SHELL != '/usr/local/bin/bash' ]]; then
-    	chsh -s /usr/local/bin/bash
-	fi
-fi
 
 #        __      __  _____ __
 #   ____/ /___  / /_/ __(_) /__  _____
@@ -174,12 +156,9 @@ if is_confirmed; then
     e_process "Installing Mac OS X fonts"
     run_fonts
 
-    e_process "Installing Mac OS X Quick Look plugins for developers"
-    run_quicklook
-
     e_success "All Mac OS X Applications have been installed"
 
     e_warning "Please consider using cask commands for Updating/Upgrading or Uninstalling a Mac OS X Application"
 fi
 
-e_success "Your Mac is ready to rock!"
+e_success "Your Mac is ready to rock! 💥"
