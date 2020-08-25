@@ -95,7 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias code="code-insiders"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 

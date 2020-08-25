@@ -35,11 +35,11 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[commit]
+# [commit]
 	# "people can trust that the changes you've made really were made by you"
   # https://help.github.com/articles/about-gpg/
   # https://git-scm.com/docs/git-config#git-config-commitgpgSign
-  gpgSign = true
+  # gpgSign = true
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
@@ -72,8 +72,6 @@
 	algorithm = patience
 [difftool]
 	prompt = false
-[difftool "kaleidoscope"]
-	cmd = ksdiff \"$LOCAL\" \"$REMOTE\"
 [merge]
   # I pretty much never mean to do a real merge, since I use a rebase workflow.
   # Note: this global option applies to all merges, including those done during a git pull
@@ -85,9 +83,6 @@
 	log = true
 [mergetool]
 	keepBackup = false
-[mergetool "kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f

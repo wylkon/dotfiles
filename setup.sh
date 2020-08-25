@@ -54,7 +54,7 @@ fi
 # Check for Homebrew
 if ! type_exists 'brew'; then
     e_process "Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 e_process "Installing Homebrew packages"
@@ -90,11 +90,6 @@ run_npm
 if ! type_exists 'push'; then
 	e_process "Installing git-friendly"
 	sudo bash < <( curl https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh)
-fi
-
-if ! type_exists 'pygmentize'; then
-	e_process "Installing pygments"
-	sudo easy_install Pygments
 fi
 
 e_success "All packages have been installed"
