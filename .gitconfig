@@ -72,6 +72,8 @@
 	algorithm = patience
 [difftool]
 	prompt = false
+[difftool "kaleidoscope"]
+	cmd = ksdiff \"$LOCAL\" \"$REMOTE\"
 [merge]
   # I pretty much never mean to do a real merge, since I use a rebase workflow.
   # Note: this global option applies to all merges, including those done during a git pull
@@ -83,6 +85,9 @@
 	log = true
 [mergetool]
 	keepBackup = false
+[mergetool "kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
