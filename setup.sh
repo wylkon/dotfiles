@@ -57,6 +57,21 @@ if ! type_exists 'brew'; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+#  ______     ______     __  __
+# /\___  \   /\  ___\   /\ \_\ \
+# \/_/  /__  \ \___  \  \ \  __ \
+#   /\_____\  \/\_____\  \ \_\ \_\
+#   \/_____/   \/_____/   \/_/\/_/
+
+
+if [ ! -e ~/.oh-my-zsh ]; then
+  e_process "Define ZSH as default"
+  chsh -s /bin/zsh
+
+  e_process "Installing Oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 e_process "Installing Homebrew packages"
 run_brew
 
