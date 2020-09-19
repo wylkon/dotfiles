@@ -1,6 +1,6 @@
 [alias]
 	br = branch
-	ci = commit -am
+	ci = commit
 	cis = ci-status
 	co = checkout
 	cp = cherry-pick
@@ -14,14 +14,16 @@
 	open = browse
 	prune = fetch --prune
 	s = status -s
+	st = status
 	undo = reset --soft HEAD^
 	up = push
 [color]
-	ui = always
+	ui = true
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	autocrlf = input
+	pager =
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -35,11 +37,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-# [commit]
-	# "people can trust that the changes you've made really were made by you"
-  # https://help.github.com/articles/about-gpg/
-  # https://git-scm.com/docs/git-config#git-config-commitgpgSign
-  # gpgSign = true
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
@@ -53,7 +50,7 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 [url "git@github.com:wylkon/"]
-  insteadOf = "git://github.com/wylkon/"
+	insteadOf = "git://github.com/wylkon/"
 [user]
 	name = Wylkon Cardoso
 	email = wylkon@wylkon.com.br
@@ -65,29 +62,9 @@
 	helper = osxkeychain
 [push]
 	# "push the current branch back to the branch whose changes are usually integrated into the current branch"
-  # "refuse to push if the upstream branch’s name is different from the local one"
-  # https://git-scm.com/docs/git-config#git-config-pushdefault
+	# "refuse to push if the upstream branch’s name is different from the local one"
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
-[diff]
-	algorithm = patience
-[difftool]
-	prompt = false
-[difftool "kaleidoscope"]
-	cmd = ksdiff \"$LOCAL\" \"$REMOTE\"
-[merge]
-  # I pretty much never mean to do a real merge, since I use a rebase workflow.
-  # Note: this global option applies to all merges, including those done during a git pull
-  # https://git-scm.com/docs/git-config#git-config-mergeff
-	ff = only
-	# Standard diff is two sets of final changes. This introduces the original text before each side's changes.
-  # https://git-scm.com/docs/git-config#git-config-mergeconflictStyle
-  conflictstyle = diff3
-	log = true
-[mergetool]
-	keepBackup = false
-[mergetool "kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
@@ -101,3 +78,18 @@
 	sort = version:refname
 [pull]
 	rebase = true
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[pager]
+	branch = false

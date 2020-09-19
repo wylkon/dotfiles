@@ -39,7 +39,7 @@ git pull
 # Before relying on Homebrew, check that packages can be compiled
 if ! type_exists 'gcc'; then
     e_error "The XCode Command Line Tools must be installed first."
-    printf "  run 'xcode-select --install' and follow the instrucctions\n"
+    printf "  run 'xcode-select --install' and follow the instructions\n"
     printf "  Then run this setup script again.\n"
     exit 1
 fi
@@ -69,7 +69,7 @@ if [ ! -e ~/.oh-my-zsh ]; then
   chsh -s /bin/zsh
 
   e_process "Installing Oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 e_process "Installing Homebrew packages"

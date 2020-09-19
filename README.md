@@ -38,7 +38,6 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 
 #### Automatic config
 
-- `.vimrc`, `.vim` - vim config, obv.
 - `.ackrc`
 - `.editorconfig`
 - `.jshintrc`
@@ -87,7 +86,7 @@ Set your pinentry program by adding it to `~/.gnupg/gpg-agent.conf`
 pinentry-program $(brew --prefix)/bin/pinentry-mac
 ```
 
-## Changing ulimit on Mac OS X 10.12 and up
+## Changing unlimit on Mac OS X 10.12 and up
 
 ```bash
 sudo /usr/libexec/PlistBuddy /Library/LaunchAgents/com.launchd.maxfiles.plist \
